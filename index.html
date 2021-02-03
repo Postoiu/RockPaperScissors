@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function computerPlay() {
+            let options = ['rock', 'paper', 'scissors'];
+            let index = Math.floor(Math.random() * 3);
+
+            return options[index];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+    
+            if(playerSelection.toLowerCase() === 'rock') {
+                if(computerSelection === 'paper') {
+                    return "You lose! Paper beats Rock."
+                }else if(computerSelection === 'scissors') {
+                    return "You won! Rock beats Scissors";
+                }else if(computerSelection === 'rock') {
+                    return "Equality! You have both chose Rock";
+                }
+            }else if(playerSelection.toLowerCase() === 'paper') {
+                if(computerSelection === 'paper') {
+                    return "Equality! You have both chose Paper"
+                }else if(computerSelection === 'scissors') {
+                    return "You lose! Scissors beats Paper."
+                }else if(computerSelection === 'rock') {
+                    return "You won! Paper beats Rock."
+                }
+            }else if(playerSelection.toLowerCase() === 'scissors') {
+                if(computerSelection === 'paper') {
+                    return "You won! Scissors beats Paper."
+                }else if(computerSelection === 'scissors') {
+                    return "Equality! You have both chosen Scissors.";
+                }else if(computerSelection === 'rock') {
+                    return "You lose! Rock beats Scissors";
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
