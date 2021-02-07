@@ -6,7 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <p id = 'player'></p>
+    <p id = 'computer'></p>
+    <p style="font-size: 20px;" id = 'result'></p>
+
     <script>
+        let playerScore = 0;
+        let computerScore = 0;
 
         function computerPlay() {
             let options = ['rock', 'paper', 'scissors'];
@@ -19,31 +25,51 @@
     
             if(playerSelection.toLowerCase() === 'rock') {
                 if(computerSelection === 'paper') {
-                    return "You lose! Paper beats Rock."
+                    ++computerScore;
                 }else if(computerSelection === 'scissors') {
-                    return "You won! Rock beats Scissors";
+                    ++playerScore;
                 }else if(computerSelection === 'rock') {
-                    return "Equality! You have both chose Rock";
+                    return;
                 }
             }else if(playerSelection.toLowerCase() === 'paper') {
                 if(computerSelection === 'paper') {
-                    return "Equality! You have both chose Paper"
+                    return;
                 }else if(computerSelection === 'scissors') {
-                    return "You lose! Scissors beats Paper."
+                    ++computerScore;
                 }else if(computerSelection === 'rock') {
-                    return "You won! Paper beats Rock."
+                    ++playerScore
                 }
             }else if(playerSelection.toLowerCase() === 'scissors') {
                 if(computerSelection === 'paper') {
-                    return "You won! Scissors beats Paper."
+                    ++playerScore;
                 }else if(computerSelection === 'scissors') {
-                    return "Equality! You have both chosen Scissors.";
+                    return;
                 }else if(computerSelection === 'rock') {
-                    return "You lose! Rock beats Scissors";
+                    ++computerScore;
                 }
             }
         }
 
+        function game() {
+            for(i = 0; i < 5; i++) {
+                const playerSelection = prompt('Rock, Paper, Scissors', '');
+                const computerSelection = computerPlay();
+
+                playRound(playerSelection, computerSelection);
+
+                document.getElementById('player').innerHTML = 'Player score: ' + playerScore;
+                document.getElementById('computer').innerHTML = 'Computer score: ' + computerScore;
+            }
+        }
+        game();
+
+        if(playerScore > computerScore) {
+            document.getElementById('result').innerHTML = 'You win!';
+        }else if(playerScore < computerScore) {
+            document.getElementById('result').innerHTML = 'You lost!';
+        }else {
+            document.getElementById('result').innerHTML = 'Equality';
+        }
     </script>
 </body>
 </html>
