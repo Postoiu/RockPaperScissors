@@ -1,0 +1,19 @@
+html, body {
+    font-size: 10px;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    height: 100vh;
+    border: 3px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    width: 10rem;
+    height: 10rem;
+}
