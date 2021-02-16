@@ -6,6 +6,7 @@ html, body {
 }
 
 #container {
+    color: white;
     height: 100vh;
     border: 3px solid white;
     display: flex;
@@ -13,7 +14,28 @@ html, body {
     align-items: center;
 }
 
-button {
+.option {
     width: 10rem;
     height: 10rem;
+    
+}
+
+#score {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 200px;
+    left: 50px;
+}
+
+#new {
+    position: absolute;
+    top: 600px;
+    left: 45px;
+}
+
+.result {
+    position: absolute;
+    top: 600px;
+    font-size: 70px;
 }

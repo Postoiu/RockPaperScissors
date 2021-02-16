@@ -7,56 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <button id ='new'>New game</button>
     <div id = 'container'>
-        <button id = 'rock'>Rock</button>
-        <button id = 'paper'>Paper</button>
-        <button id = 'scissors'>Scissors</button>
+
+        <div id = 'score'>
+            <p id = 'player'>Player score: 0</p>
+            <p id = 'computer'>Computer score: 0</p>
+        </div>
+
+        <button id = 'rock' class ='option'>Rock</button>
+        <button id = 'paper' class = 'option'>Paper</button>
+        <button id = 'scissors' class = 'option'>Scissors</button>
+        
     </div>
 
-    <script>
-        let playerScore = 0;
-        let computerScore = 0;
-
-        function computerPlay() {
-            let options = ['rock', 'paper', 'scissors'];
-            let index = Math.floor(Math.random() * 3);
-
-            return options[index];
-        }
-
-        function playRound(playerSelection, computerSelection) {
-    
-            if(playerSelection.toLowerCase() === 'rock') {
-                if(computerSelection === 'paper') {
-                    ++computerScore;
-                }else if(computerSelection === 'scissors') {
-                    ++playerScore;
-                }else if(computerSelection === 'rock') {
-                    return;
-                }
-            }else if(playerSelection.toLowerCase() === 'paper') {
-                if(computerSelection === 'paper') {
-                    return;
-                }else if(computerSelection === 'scissors') {
-                    ++computerScore;
-                }else if(computerSelection === 'rock') {
-                    ++playerScore
-                }
-            }else if(playerSelection.toLowerCase() === 'scissors') {
-                if(computerSelection === 'paper') {
-                    ++playerScore;
-                }else if(computerSelection === 'scissors') {
-                    return;
-                }else if(computerSelection === 'rock') {
-                    ++computerScore;
-                }
-            }
-        }
-        const btn = document.querySelector('button');
-        btn.addEventListener('onclick', playRound(btn.id, computerPlay()));
-        console.log(btn.id);
-        //console.log('Computer score: ' + computerScore);
-        //console.log('Player score: ' + playerScore);
-    </script>
+    <script src = 'scripts/main.js'></script>
 </body>
 </html>
