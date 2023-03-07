@@ -9,8 +9,6 @@ function computerPlay() {
     return options[index];
 }
 
-console.log('test');
-
 function playRound(playerSelection, computerSelection) {
 
     if(playerSelection.toLowerCase() === 'rock') {
